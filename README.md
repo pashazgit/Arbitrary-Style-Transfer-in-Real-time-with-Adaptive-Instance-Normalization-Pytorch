@@ -1,6 +1,6 @@
 # Pytorch Implementation of Arbitrary Style Transfer in Real-time with Adaptive Instance Normalization
 
-## Citation
+## Reference
 ```
 @inproceedings{huang2017adain,
   title={Arbitrary Style Transfer in Real-time with Adaptive Instance Normalization},
@@ -39,16 +39,6 @@ python solution.py
 --styleInterpWeights 0.2,0.8
 ```
 
-## Reference
-```
-@inproceedings{huang2017adain,
-  title={Arbitrary Style Transfer in Real-time with Adaptive Instance Normalization},
-  author={Huang, Xun and Belongie, Serge},
-  booktitle={ICCV},
-  year={2017}
-}
-```
-[[Github]](https://github.com/xunhuang1995/AdaIN-style)
 
 
 
