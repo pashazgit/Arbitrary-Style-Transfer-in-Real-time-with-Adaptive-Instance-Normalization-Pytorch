@@ -1,3 +1,16 @@
+# Pytorch Implementation of Arbitrary Style Transfer in Real-time with Adaptive Instance Normalization
+
+## Citation
+```
+@inproceedings{huang2017adain,
+  title={Arbitrary Style Transfer in Real-time with Adaptive Instance Normalization},
+  author={Huang, Xun and Belongie, Serge},
+  booktitle={ICCV},
+  year={2017}
+}
+```
+[[Github]](https://github.com/xunhuang1995/AdaIN-style)
+
 ## Download
 
 You need to download models from this link and put them in the model directory.
