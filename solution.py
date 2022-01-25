@@ -46,10 +46,6 @@ def train(config):
     # Create optimizer
     optimizer = optim.Adam(dec.parameters(), lr=lr)
 
-    # # Create loss objects
-    # content_loss = content_criterian()
-    # style_loss = style_criterian()
-
     # Create log directory if it does not exist
     if not os.path.exists(config.log_dir):
         os.makedirs(config.log_dir)
