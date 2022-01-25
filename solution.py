@@ -40,12 +40,15 @@ def train(config):
     enc.eval()
     dec.train()
 
+    # lr = config.learning_rate/(1 + config.learning_rate_decay * epoch)
+    lr = config.learning_rate
+
+    # Create optimizer
+    optimizer = optim.Adam(dec.parameters(), lr=lr)
+
     # # Create loss objects
     # content_loss = content_criterian()
     # style_loss = style_criterian()
-    # if torch.cuda.is_available():
-    #     content_loss = content_loss.cuda()
-    #     style_loss = style_loss.cuda()
 
     # Create log directory if it does not exist
     if not os.path.exists(config.log_dir):
@@ -62,12 +65,6 @@ def train(config):
     for epoch in range(config.num_epoch):
         # # For each iteration
         prefix = "Training Epoch {:3d}: ".format(epoch)
-
-        # lr = config.learning_rate/(1 + config.learning_rate_decay * epoch)
-        lr = config.learning_rate
-
-        # Create optimizer
-        optimizer = optim.Adam(dec.parameters(), lr=lr)
 
         for (content, style) in tqdm(trainloader(config), desc=prefix):
             # Counter

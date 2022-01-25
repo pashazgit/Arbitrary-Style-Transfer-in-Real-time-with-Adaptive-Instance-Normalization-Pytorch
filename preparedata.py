@@ -11,6 +11,30 @@ from skimage import io, transform
 from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms, utils, datasets
 
+
+with open("/mnt/Data/Downloads/data/coco/test2014.csv") as f:
+    lines = f.read().splitlines()
+
+for file in tqdm(lines):
+    try:
+        image = Image.open(f"/mnt/Data/Downloads/data/coco/test2014/{file}")
+        assert (np.asarray(image).shape[2] == 3)
+        image.save(f"/mnt/Data/Downloads/data/coco/test2014_sliced/{file}")
+    except:
+        pass
+
+with open("/mnt/Data/Downloads/data/wikiart/test.csv") as f:
+    lines = f.read().splitlines()
+
+for file in tqdm(lines):
+    try:
+        image = Image.open(f"/mnt/Data/Downloads/data/wikiart/test/{file}")
+        assert (np.asarray(image).shape[2] == 3)
+        image.save(f"/mnt/Data/Downloads/data/wikiart/test_sliced/{file}")
+    except:
+        pass
+
+
 # with open("/mnt/Data/Downloads/data/coco/train2014_sliced.csv") as f:
 #     lines = f.read().splitlines()
 #
@@ -48,26 +72,3 @@ from torchvision import transforms, utils, datasets
 #         image.save(f"/mnt/Data/Downloads/data/wikiart/train_sliced/{file}")
 #     except:
 #         pass
-
-
-with open("/mnt/Data/Downloads/data/coco/test2014.csv") as f:
-    lines = f.read().splitlines()
-
-for file in tqdm(lines):
-    try:
-        image = Image.open(f"/mnt/Data/Downloads/data/coco/test2014/{file}")
-        assert (np.asarray(image).shape[2] == 3)
-        image.save(f"/mnt/Data/Downloads/data/coco/test2014_sliced/{file}")
-    except:
-        pass
-
-with open("/mnt/Data/Downloads/data/wikiart/test.csv") as f:
-    lines = f.read().splitlines()
-
-for file in tqdm(lines):
-    try:
-        image = Image.open(f"/mnt/Data/Downloads/data/wikiart/test/{file}")
-        assert (np.asarray(image).shape[2] == 3)
-        image.save(f"/mnt/Data/Downloads/data/wikiart/test_sliced/{file}")
-    except:
-        pass

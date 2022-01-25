@@ -9,7 +9,6 @@
   year={2017}
 }
 ```
-[[Github]](https://github.com/xunhuang1995/AdaIN-style)
 
 ## Download
 
